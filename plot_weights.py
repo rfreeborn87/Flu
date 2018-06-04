@@ -8,6 +8,9 @@ import copy
 import openpyxl
 import os
 
+"""This script imports an excel spreadsheet with animal weights over time.  It calculates the average change in weight per day for each group of animals, specified by the user. 
+It plots both the weight change for individual animals as well as the average weight change for each group.  Plots are added to a new excel spreadsheet."""
+
 
 file = pd.read_excel(input('Please enter the file which contains the original weight data.  Be sure to include path and extension (i.e. C:/Desktop/Rockwell_Lab/file.xlsx):\n'))
 file.index = file['ID']

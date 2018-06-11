@@ -18,6 +18,12 @@ del file['ID']
 #If a day's data hasn't been filled in yet, delete the column for that day.
 new_df = copy.deepcopy(file).dropna(how = 'all', axis = 1).dropna(how = 'any')
 #new_df.dropna(axis = 1)
+if input('Do you have known uninfected animals?  (y/n) \n') == 'y':
+    outliers = input('Enter the outliers\' IDs separated by a comma. \n').split(', ')
+    for outlier in outliers:
+        #print(outlier)
+        new_df = new_df[new_df.index != outlier] 
+    
 
 
 #Build a list of days to serve as the x-axis for graph.  This should start at 0 and end at the last date with data entered.
